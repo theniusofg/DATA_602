@@ -1,0 +1,33 @@
+An Analysis of Features in Linear Regression for Housing Data
+
+Start with the repo we used in first class, the specific notebook:
+https://github.com/DataSciencePros/data_science_workshop/blob/master/app/scikit_learn_workshop.ipynb
+and data:
+https://github.com/DataSciencePros/data_science_workshop/blob/master/app/data/housing_processed.csv
+
+After running the cells, add code to this notebook to achieve the following:
+1)    Split the data for training and testing, to use 80 percent as training data.
+use 21 as your randomization seed (so you achieve same results for us to grade).
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+random_state = 21
+train_size = .8
+
+In the following steps use training set to fit the model, and test set to evaluate it.
+2)    Analyze which feature alone would give the best prediction, list the scores and RMSE errors achieved by the top 10 predictors by score.
+(create a loop to train a linear model for each feature and save the scores and RMSE and sort by score)
+
+3)    Select all possible 2 pairs of these top 10 predictors, and train 45 linear models, list the scores and RMSE errors achieved by the top 10 predictors by score.
+
+4)    Train a single model using all features. Calculate RMSE and score. Observe how much of the prediction power was in the 2 pairs, vs all features.
+
+5)    Use the 5NN and 10NN regressor with all features, and list the RMSE and score for these 2 models 
+https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
+
+
+observe if the results are better than linear regression? 
+
+- The results are better for linear regression when fitting all features. Both for the score and rmse values.
+
+Which regressor is better for inference? 
+
+- When applying the different regressors (linear, 5nn, and 10nn) the scoring and RMSEs it is immediately apparent that Linear appeas to have a better fit.This comports with what we learned in class. It is not to say better fit lends itself to better inference per se but does happen to be the case here.
